@@ -53,3 +53,21 @@ VRM_PASSWORD=mypassword
 
 In the diretory containing the docker-compose.yaml file, execute `docker-compose up --detach`
 
+## Accessing Grafna
+
+Go to http://localhost:3000 and enter `admin` for user name and `admin` for password. Please change the password when prompted.
+
+## Influxdb Measurement Storage
+
+Measurments are stored in influxdb using a modified version of the MQTT topics.
+
+The portal id and instance numbers are removed from the name and are "tags" on the data
+
+Example measurement names: battery/Dc/0/Voltage, solarcharger/Dc/0/Current
+
+If you have multiple venus servers or mulitple devices of the same type, you may need to add portalId and or/instanceNumber to your Grafana queries
+
+For example: 
+```
+SELECT mean("value") FROM "solarcharger/Dc/0/Current" WHERE ("portalId" = '985dadcb8af0' AND "instanceNumber" = '258') AND $timeFilter GROUP BY time($__interval) fill(null)
+```
