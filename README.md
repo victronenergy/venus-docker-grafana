@@ -2,7 +2,7 @@
 
 ## Local Network Setup Using Local MQTT Access 
 
-* `git clone` this repository or download the [docker-compose.yaml](docker-compose.yaml) file
+* `git clone` this repository: `git clone https://github.com/victronenergy/venus-docker-grafana.git`
 * By default, if running venus v2.30~35 or later, UPNP will be used to autoimatically discover your local devices
 * If not running v2.30~35 or later or your devices are not on the local network, you can setup a custom config file.
 
