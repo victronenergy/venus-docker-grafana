@@ -1,0 +1,11 @@
+version: 1
+task_definition:
+  docker_volumes:
+    - name: influxdb-storage
+      scope: shared
+      autoprovision: true
+      driver: local
+    - name: grafana-storage
+      scope: shared
+      autoprovision: true
+      driver: local
