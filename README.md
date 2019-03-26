@@ -63,7 +63,7 @@ Measurments are stored in influxdb using a modified version of the MQTT topics.
 
 The portal id and instance numbers are removed from the name and are "tags" on the data
 
-Example measurement names: battery/Dc/0/Voltage, solarcharger/Dc/0/Current
+Example measurement names: `battery/Dc/0/Voltage`, `solarcharger/Dc/0/Current`
 
 If you have multiple venus servers or mulitple devices of the same type, you may need to add portalId and or/instanceNumber to your Grafana queries
 
