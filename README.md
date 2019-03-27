@@ -2,7 +2,7 @@
 
 ## Local Network Setup Using Local MQTT Access 
 
-* `git clone` this repository or download the [docker-compose.yaml](docker-compose.yaml) file
+* `git clone` this repository: `git clone https://github.com/victronenergy/venus-docker-grafana.git`
 * By default, if running venus v2.30~35 or later, UPNP will be used to autoimatically discover your local devices
 * If not running v2.30~35 or later or your devices are not on the local network, you can setup a custom config file.
 
@@ -63,7 +63,7 @@ Measurments are stored in influxdb using a modified version of the MQTT topics.
 
 The portal id and instance numbers are removed from the name and are "tags" on the data
 
-Example measurement names: battery/Dc/0/Voltage, solarcharger/Dc/0/Current
+Example measurement names: `battery/Dc/0/Voltage`, `solarcharger/Dc/0/Current`
 
 If you have multiple venus servers or mulitple devices of the same type, you may need to add portalId and or/instanceNumber to your Grafana queries
 
