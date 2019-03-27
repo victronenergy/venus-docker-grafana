@@ -5,6 +5,7 @@ services:
     environment:
      - VRM_USER_NAME=username
      - VRM_PASSWORD=password
+     - LOADER_DB_HOST=influxdb
     links:
       - influxdb
     logging:
