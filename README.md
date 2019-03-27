@@ -53,6 +53,36 @@ VRM_PASSWORD=mypassword
 
 In the diretory containing the docker-compose.yaml file, execute `docker-compose up --detach`
 
+## Setup To Run On Amazon AWS (EC2/ECS)
+
+#### Installthe amazon ecs-cli
+[Install ecs-cli](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_CLI_installation.html)
+
+#### Configure your profile
+`ecs-cli configure profile --profile-name profile_name --access-key $AWS_ACCESS_KEY_ID --secret-key $AWS_SECRET_ACCESS_KEY`
+
+See (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_CLI_Configuration.html) for more information
+
+#### Configure your cluster
+`ecs-cli configure --cluster victron --default-launch-type EC2 --region us-east-1 --config-name victron`
+
+#### Create your cluster 
+`ecs-cli up --keypair ECS --capability-iam --size 1 --instance-type t2.medium --cluster-config victron`
+
+#### Deploy to the cluster
+
+Edit the docker-compose-ecs.yaml file and enter your VRM username and password
+
+`ecs-cli compose --ecs-params ecs-params.yml -f docker-compose-ecs.yaml up --create-log-groups --cluster-config victron`
+
+#### Access Grafana
+Go to the new EC2 instance to get the public ip address
+Then go to http://EC2_PUBLIC_UP
+
+#### To cleanup and bring down the cluster
+`ecs-cli down --cluster-config victron`
+
+
 ## Accessing Grafna
 
 Go to http://localhost:3000 and enter `admin` for user name and `admin` for password. Please change the password when prompted.
