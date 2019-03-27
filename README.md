@@ -6,7 +6,7 @@
 * By default, if running venus v2.30~35 or later, UPNP will be used to autoimatically discover your local devices
 * If not running v2.30~35 or later or your devices are not on the local network, you can setup a custom config file.
 
-### Start the system using UNPNP for discovery
+### Start the system using UPNP for discovery
 
 In the diretory containing the docker-compose.yaml file, execute `docker-compose up --detach`
 
@@ -70,4 +70,14 @@ If you have multiple venus servers or mulitple devices of the same type, you may
 For example: 
 ```
 SELECT mean("value") FROM "solarcharger/Dc/0/Current" WHERE ("portalId" = '985dadcb8af0' AND "instanceNumber" = '258') AND $timeFilter GROUP BY time($__interval) fill(null)
+```
+
+## Influxdb Retention Policy
+
+The default retention policy is 30 days. To change this you can edit [loader.env](loader.env). The value is an influxdb [Duration](https://docs.influxdata.com/influxdb/v1.7/query_language/spec/#durations)
+
+```
+CONFIG_FILE=./config/config.json
+
+INFLUXDB_RETENTION=1d
 ```
