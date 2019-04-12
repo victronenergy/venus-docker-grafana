@@ -1,6 +1,12 @@
-# victron-influxdb-grafana
+# venus-docker-grafana
 
-## Local Network Setup Using Local MQTT Access 
+This is a docker-compose file that ties together all thats needed to store data from a
+[Victron GX Device]() at ~2 second interval and analyse it using
+[Grafana](). Grafana is a super powerful webbased data analysis tool.
+
+## How to use.
+
+### Local Network Setup Using Local MQTT Access 
 
 * `git clone` this repository: `git clone https://github.com/victronenergy/venus-docker-grafana.git`
 * By default, if running venus v2.30~35 or later, UPNP will be used to autoimatically discover your local devices
