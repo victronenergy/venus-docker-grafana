@@ -133,7 +133,16 @@ CONFIG_FILE=./config/config.json
 INFLUXDB_RETENTION=1d
 ```
 
-## 4. Rest of the sources
+## 4. How does this work?
+
+Docker is a container technology, see Google.
+
+The data is retrieved using the
+[MQTT protocol](https://github.com/victronenergy/dbus-mqtt).
+
+[The loader](https://github.com/victronenergy/venus-docker-grafana-images/tree/master/loader)
+contains the Python code that takes care of the MQTT communication and storing the data in
+the Influx database.
 
 This repo only contains the docker-compose file. The rest of the sources, there is only a handful, is in
 [venus-docker-grafana-images](https://github.com/victronenergy/venus-docker-grafana-images).
