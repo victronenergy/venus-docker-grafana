@@ -5,10 +5,16 @@ This is a docker-compose file that ties together all thats needed to store data 
 [Grafana](https://grafana.com/). Grafana is a super powerful webbased data analysis tool.
 Which is quite easy to learn.
 
-These tools works locally; with the GX Device in your local network. And also it can connect
-via the VRM cloud, connecting to a GX Device that is else where.
+This solution can work with one or more GX Devices in your local network, as well connect
+to devices via the VRM cloud.
 
-See further below for the dev. details. This readme starts with how to use it.
+Running this solution can be done on a Linux host or VM, and also a RaspberryPi will
+suffice. The latter obviously has limitations in storage and performance.
+
+Besides hosting this yourself, it can also be hosted on Amazon AWS and other cloud
+providers. See AWS instructions below.
+
+This readme starts with how to use it. See further below for the dev. details.
 
 ## 1. How to use
 
@@ -95,7 +101,7 @@ Edit the docker-compose-ecs.yaml file and enter your VRM username and password
 
 #### Step 6. Access Grafana
 Go to the new EC2 instance to get the public ip address
-Then go to http://EC2_PUBLIC_UP
+Then go to http://EC2_PUBLIC_IP
 
 #### Step 7. To cleanup and bring down the cluster
 `ecs-cli down --cluster-config victron`
@@ -103,13 +109,13 @@ Then go to http://EC2_PUBLIC_UP
 
 ## 2. Influxdb Measurement Storage
 
-Measurments are stored in influxdb using a modified version of the MQTT topics.
+Measurements are stored in influxdb using a modified version of the MQTT topics.
 
 The portal id and instance numbers are removed from the name and are "tags" on the data
 
 Example measurement names: `battery/Dc/0/Voltage`, `solarcharger/Dc/0/Current`
 
-If you have multiple venus servers or multiple devices of the same type, you may need to add
+If you have multiple GX devices, or multiple devices of the same type, you may need to add
 portalId and or/instanceNumber to your Grafana queries
 
 For example: 
