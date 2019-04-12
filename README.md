@@ -20,6 +20,7 @@ This readme starts with how to use it. See further below for the dev. details.
 
 ### 1.1 Host it locally
 
+1. Enable the MQTT service on your GX Device in Settings -> Services.
 1. `git clone` this repository: `git clone https://github.com/victronenergy/venus-docker-grafana.git`
 2. Follow instructions for option A, B OR C below
 3. Accessing Grafana on http://localhost:3000 and enter `admin` for user name and `admin` for password.
