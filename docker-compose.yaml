@@ -1,12 +1,12 @@
 version: '3.4'
 services:
-  loader:
-    image: "sbender9/victron-loader"
-    volumes:
-     - "./config:/config"
-    env_file:
-     - loader.env
+  server:
+    image: "sbender9/victron-server:amd64-latest"
     network_mode: host
+    ports:
+     - "8088:8088"
+    volumes:
+     - "config-storage:/config"
   influxdb:
     image: "influxdb:1.7"
     ports:
@@ -16,7 +16,7 @@ services:
     environment:
      - INFLUXDB_HTTP_LOG_ENABLED=false
   grafana:
-    image: "sbender9/victron-grafana"
+    image: "sbender9/victron-grafana:amd64-latest"
     volumes:
      - "grafana-storage:/var/lib/grafana"
     ports:
@@ -25,4 +25,5 @@ services:
 volumes:
  influxdb-storage:
  grafana-storage:
+ config-storage:
 
