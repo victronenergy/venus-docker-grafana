@@ -2,11 +2,13 @@ version: '3.4'
 services:
   server:
     image: "sbender9/victron-server:amd64-latest"
-    network_mode: host
     ports:
      - "8088:8088"
     volumes:
      - "config-storage:/config"
+  upnp:
+    image: "sbender9/victron-upnp:amd64-latest"
+    network_mode: host
   influxdb:
     image: "influxdb:1.7"
     ports:
