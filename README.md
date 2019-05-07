@@ -21,7 +21,7 @@ This readme starts with how to use it. See further below for the dev. details.
 ### 1.1 Host it locally
 
 1. Enable the MQTT service on your GX Device in Settings -> Services.
-2. Download the docker compose [file](docker-compose.yaml)
+2. Download the docker compose [file](https://raw.githubusercontent.com/victronenergy/venus-docker-grafana/master/docker-compose.yaml)
 3. In the directory containing the downloaded file, execute `docker-compose up --detach`.
 4. Go to the admin interface @ http://localhost:8088
 4. Follow instructions for option A, B OR C below
