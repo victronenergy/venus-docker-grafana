@@ -12,7 +12,7 @@ Running this solution can be done on any platform that support Docker, and also 
 suffice. The latter obviously has limitations in storage and performance.
 
 Besides hosting this yourself, it can also be hosted on Amazon AWS and other cloud
-providers. See AWS instructions below.
+providers. See the [AWS instructions](AWS.md).
 
 This readme starts with how to use it. See further below for the dev. details.
 
