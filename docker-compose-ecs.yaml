@@ -1,13 +1,11 @@
 version: '3'
 services:
-  loader:
-    image: "sbender9/victron-loader"
-    environment:
-     - VRM_USER_NAME=username
-     - VRM_PASSWORD=password
-     - LOADER_DB_HOST=influxdb
+  server:
+    image: "sbender9/victron-server"
     links:
       - influxdb
+    volumes:
+     - "config-storage:/config"
     logging:
       driver: awslogs
       options: 
@@ -46,4 +44,5 @@ services:
 volumes:
  influxdb-storage:
  grafana-storage:
+ config-storage:
 
