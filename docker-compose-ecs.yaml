@@ -1,11 +1,13 @@
 version: '3'
 services:
   server:
-    image: "sbender9/victron-server"
+    image: "sbender9/victron-server:latest"
     links:
       - influxdb
     volumes:
      - "config-storage:/config"
+    ports:
+     - "8088:8088"
     logging:
       driver: awslogs
       options: 
@@ -27,13 +29,13 @@ services:
         awslogs-region: us-east-1
         awslogs-stream-prefix: influxdb
   grafana:
-    image: "sbender9/victron-grafana"
+    image: "sbender9/victron-grafana:latest"
     links:
       - influxdb
     volumes:
      - "grafana-storage:/var/lib/grafana"
     ports:
-     - "80:3000"
+     - "3000:3000"
     logging:
       driver: awslogs
       options: 

@@ -9,3 +9,7 @@ task_definition:
       scope: shared
       autoprovision: true
       driver: local
+    - name: config-storage
+      scope: shared
+      autoprovision: true
+      driver: local
