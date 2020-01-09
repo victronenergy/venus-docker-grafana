@@ -5,6 +5,10 @@ This is a docker-compose file that ties together all thats needed to store data 
 [Grafana](https://grafana.com/). Grafana is a super powerful webbased data analysis tool.
 Which is quite easy to learn.
 
+This repository contains the docker compose configurations and is all that is needed to get up and running. The source code and setup for the docker images are located here: https://github.com/victronenergy/venus-docker-grafana-images 
+
+For the latest info on releases, see: https://github.com/victronenergy/venus-docker-grafana-images/releases
+
 This solution can work with one or more GX Devices in your local network, as well connect
 to devices via the VRM cloud.
 
