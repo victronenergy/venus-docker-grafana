@@ -1,7 +1,7 @@
 version: '3'
 services:
   server:
-    image: "sbender9/victron-server:latest"
+    image: "victronenergy/venus-docker-server:latest"
     links:
       - influxdb
     volumes:
@@ -29,9 +29,10 @@ services:
         awslogs-region: us-east-1
         awslogs-stream-prefix: influxdb
   grafana:
-    image: "sbender9/victron-grafana:latest"
+    image: "victronenergy/venus-docker-grafana:latest"
     links:
       - influxdb
+      - server
     volumes:
      - "grafana-storage:/var/lib/grafana"
     ports:

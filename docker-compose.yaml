@@ -1,13 +1,13 @@
 version: '3.4'
 services:
   server:
-    image: "sbender9/victron-server:latest"
+    image: "victronenergy/venus-docker-server:latest"
     ports:
      - "8088:8088"
     volumes:
      - "config-storage:/config"
   upnp:
-    image: "sbender9/victron-upnp:latest"
+    image: "victronenergy/venus-docker-upnp:latest"
     network_mode: host
   influxdb:
     image: "influxdb:1.7"
@@ -18,7 +18,7 @@ services:
     environment:
      - INFLUXDB_HTTP_LOG_ENABLED=false
   grafana:
-    image: "sbender9/victron-grafana:latest"
+    image: "victronenergy/venus-docker-grafana:latest"
     volumes:
      - "grafana-storage:/var/lib/grafana"
     ports:
