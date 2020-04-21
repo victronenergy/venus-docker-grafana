@@ -17,7 +17,7 @@ services:
      - "influxdb-storage:/var/lib/influxdb"
     environment:
      - INFLUXDB_HTTP_LOG_ENABLED=false
-  grafana:
+  graphing:
     image: "victronenergy/venus-docker-grafana:latest"
     volumes:
      - "grafana-storage:/var/lib/grafana"
