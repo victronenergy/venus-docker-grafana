@@ -81,6 +81,9 @@ All your devices in VRM will show in the list.
 
 Clisk `Save` to start collecting data
 
+### 2.2 Host in on Amazon AWS or another cloud provider.
+
+This section needs explaining. Pull requests welcome.
 
 ## 3. Influxdb Measurement Storage
 
