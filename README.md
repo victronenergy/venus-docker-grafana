@@ -22,7 +22,7 @@ Make sure to go online and learn more about it.
 
 An example of a dashboard:
 
-![hydro power docker example](https://raw.githubusercontent.com/victronenergy/venus-docker-grafana/master/C35D2112-B34F-43BD-B825-9E0C1127B639.jpeg)
+![hydro power docker example](https://raw.githubusercontent.com/victronenergy/venus-docker-grafana/master/hydro%20grafana.jpg)
 
 ## 1. Requirements
 
