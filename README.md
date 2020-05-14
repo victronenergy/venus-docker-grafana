@@ -12,13 +12,13 @@ But also offers:
 
 - more granular data, its recorded at a (approx) two second interval
 - an offline solution: venus-docker-grafana can run on a computer local to a Victron system. No internet required.
-- far more options in customisation.
+- far more options in graphing, visualisation and customisation.
 
 This solution can work with one or more GX Devices in your local network, as well connect
 to devices via the VRM cloud.
 
 Note that "Grafana" is not a Victron product. Its an existing widely used dashboarding solution.
-Make sure to go online to learn more about it.
+Make sure to go online and learn more about it.
 
 ## 1. Requirements
 
@@ -39,7 +39,7 @@ are making to the solution, see: https://github.com/victronenergy/venus-docker-g
 
 ## 2. How to install
 
-### 1.1 Host it locally
+### 2.1 Host it locally
 
 https://youtu.be/j4kdKqDGuys
 
