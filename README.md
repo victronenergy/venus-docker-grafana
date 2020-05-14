@@ -20,6 +20,10 @@ to devices via the VRM cloud.
 Note that "Grafana" is not a Victron product. Its an existing widely used dashboarding solution.
 Make sure to go online and learn more about it.
 
+An example of a dashboard:
+
+![hydro power docker example](https://raw.githubusercontent.com/victronenergy/venus-docker-grafana/master/C35D2112-B34F-43BD-B825-9E0C1127B639.jpeg)
+
 ## 1. Requirements
 
 - A Victron Energy system including a [Victron GX Device](https://www.victronenergy.com/live/venus-os:start)
