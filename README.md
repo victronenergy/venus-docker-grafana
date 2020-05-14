@@ -41,11 +41,11 @@ are making to the solution, see: https://github.com/victronenergy/venus-docker-g
 
 ### 2.1 Host it locally
 
-https://youtu.be/j4kdKqDGuys
+This video walks through below steps: https://youtu.be/j4kdKqDGuys
 
-1. [Download and install Docker desktop](https://www.docker.com/products/docker-desktop). Its available for Windows, macOS, Linux and more operating systems.
+1. Download and install [Docker desktop](https://www.docker.com/products/docker-desktop). Its available for Windows, macOS, Linux and more operating systems.
 1. Enable the MQTT service on your GX Device in Settings -> Services.
-2. Download the docker compose [file](https://raw.githubusercontent.com/victronenergy/venus-docker-grafana/master/docker-compose.yaml)
+2. Download the docker compose [file](https://raw.githubusercontent.com/victronenergy/venus-docker-grafana/master/docker-compose.yaml) (right-click and use Save as)
 3. In the directory containing the downloaded file, execute `docker-compose up --detach`.
 4. Go to the admin interface @ http://localhost:8088
 4. Follow instructions for option A, B OR C below
