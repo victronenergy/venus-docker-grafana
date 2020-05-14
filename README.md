@@ -1,28 +1,47 @@
-# venus-docker-grafana
+# venus-docker-grafana - Advanced Victron Dashboarding
 
-This is a docker-compose file that ties together all thats needed to store data from a
-[Victron GX Device](https://www.victronenergy.com/live/venus-os:start) at ~2 second interval and analyse it using
+Venus-docker-grafana is a dashboarding solution for Victron Energy systems.
+Its a niche alternative to our main solution, the [VRM Portal](https://vrm.victronenergy.com).
+
+Compared to VRM, the docker grafana solution is:
+
+- more work to install & configure
+- not officially supported.
+
+But also offers:
+
+- more granular data, its recorded at a (approx) two second interval
+- an offline solution: venus-docker-grafana can run on a computer local to a Victron system. No internet required.
+- far more options in customisation.
+
+This solution can work with one or more GX Devices in your local network, as well connect
+to devices via the VRM cloud.
+
+Note that "Grafana" is not a Victron product. Its an existing widely used dashboarding solution.
+Make sure to go online to learn more about it.
+
+## 1. Requirements
+
+- A Victron Energy system including a [Victron GX Device](https://www.victronenergy.com/live/venus-os:start)
+- A computer to host and run all this. It can be a Windows or Apple laptop or
+computer. But also a raspberrypi: Running this solution can be done on any platform that support Docker.
+- Or, rather than hosting it locally, it can also be hosted on Amazon AWS and other cloud
+providers. See the [AWS instructions](AWS.md).
+- Patience and willingness to study and figure all this out. Beware that thos is not an officially supported Victron solution. Our partners, dealers and neither ourselves will help you in case of problems. For support, [go to Community and search for Grafana](https://community.victronenergy.com/search.html?c=&includeChildren=&f=&type=question+OR+idea+OR+kbentry+OR+answer+OR+topic+OR+user&redirect=search%2Fsearch&sort=relevance&q=grafana).
+The main item in this repository is a docker-compose file that ties together all thats needed to store & visualise the data. from a at ~2 second interval and analyse it using
 [Grafana](https://grafana.com/). Grafana is a super powerful webbased data analysis tool.
 Which is quite easy to learn.
 
 This repository contains the docker compose configurations and is all that is needed to get up and running. The source code and setup for the docker images are located here: https://github.com/victronenergy/venus-docker-grafana-images 
 
-For the latest info on releases, see: https://github.com/victronenergy/venus-docker-grafana-images/releases
+For the latest info on changes we
+are making to the solution, see: https://github.com/victronenergy/venus-docker-grafana-images/releases
 
-This solution can work with one or more GX Devices in your local network, as well connect
-to devices via the VRM cloud.
-
-Running this solution can be done on any platform that support Docker, and also a RaspberryPi will
-suffice. The latter obviously has limitations in storage and performance.
-
-Besides hosting this yourself, it can also be hosted on Amazon AWS and other cloud
-providers. See the [AWS instructions](AWS.md).
-
-This readme starts with how to use it. See further below for the dev. details.
-
-## 1. How to use
+## 2. How to install
 
 ### 1.1 Host it locally
+
+https://youtu.be/j4kdKqDGuys
 
 1. [Download and install Docker desktop](https://www.docker.com/products/docker-desktop). Its available for Windows, macOS, Linux and more operating systems.
 1. Enable the MQTT service on your GX Device in Settings -> Services.
@@ -63,7 +82,7 @@ All your devices in VRM will show in the list.
 Clisk `Save` to start collecting data
 
 
-## 2. Influxdb Measurement Storage
+## 3. Influxdb Measurement Storage
 
 Measurements are stored in influxdb using a modified version of the MQTT topics.
 
@@ -84,11 +103,11 @@ SELECT mean("value") FROM "solarcharger/Dc/0/Current" WHERE ("portalId" = '985da
 SELECT mean("value") FROM "solarcharger/Dc/0/Current" WHERE ("name" = 'Boat' AND "instanceNumber" = '258') AND $timeFilter GROUP BY time($__interval) fill(null)
 ```
 
-## 3. Influxdb Retention Policy
+## 4. Influxdb Retention Policy
 
 The default retention policy is 30 days. To change this you can go to Configuration -> InfluxDB In the admin interface. The value is an influxdb [Duration](https://docs.influxdata.com/influxdb/v1.7/query_language/spec/#durations)
 
-## 4. How does this work?
+## 5. How does this work?
 
 Docker is a container technology, see Google.
 
