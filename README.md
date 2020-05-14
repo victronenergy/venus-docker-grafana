@@ -45,7 +45,7 @@ are making to the solution, see: https://github.com/victronenergy/venus-docker-g
 
 ### 2.1 Host it locally
 
-This video walks through below steps: https://youtu.be/j4kdKqDGuys
+This video walks through below steps: https://www.youtube.com/watch?v=IkNuadRbANA
 
 1. Download and install [Docker desktop](https://www.docker.com/products/docker-desktop). Its available for Windows, macOS, Linux and more operating systems.
 1. Enable the MQTT service on your GX Device in Settings -> Services.
