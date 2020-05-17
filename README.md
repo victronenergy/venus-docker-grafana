@@ -97,7 +97,8 @@ The default retention policy is 30 days. To change this you can go to Configurat
 
 Measurements are stored in influxdb using a modified version of the MQTT topics. The portal id and instance numbers are removed from the name and are "tags" on the data. The device name, if available, is also added as a "tag"
 
-Example measurement names: `battery/Dc/0/Voltage`, `solarcharger/Dc/0/Current`
+Example measurement names: `battery/Dc/0/Voltage`, `solarcharger/Dc/0/Current`. In those, the first segment, ie. Battery and Solarcharger, are the type of device. The everything after that is the name of the parameter. And in
+Venus OS is the D-Bus path.
 
 If you have multiple GX devices, or multiple devices of the same type, you may need to add
 portalId and or/instanceNumber to your Grafana queries as well.
