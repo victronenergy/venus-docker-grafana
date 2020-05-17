@@ -89,20 +89,25 @@ Clisk `Save` to start collecting data
 
 This section needs explaining. Pull requests welcome.
 
-## 3. Influxdb Measurement Storage
+## 3. Influxdb Retention Policy
 
-Measurements are stored in influxdb using a modified version of the MQTT topics.
+The default retention policy is 30 days. To change this you can go to Configuration -> InfluxDB In the admin interface. The value is an influxdb [Duration](https://docs.influxdata.com/influxdb/v1.7/query_language/spec/#durations)
 
-The portal id and instance numbers are removed from the name and are "tags" on the data
+## 4. Influxdb Measurement Storage
 
-THe device name, if available, is also added as a "tag"
+Measurements are stored in influxdb using a modified version of the MQTT topics. The portal id and instance numbers are removed from the name and are "tags" on the data. The device name, if available, is also added as a "tag"
 
 Example measurement names: `battery/Dc/0/Voltage`, `solarcharger/Dc/0/Current`
 
 If you have multiple GX devices, or multiple devices of the same type, you may need to add
-portalId and or/instanceNumber to your Grafana queries
+portalId and or/instanceNumber to your Grafana queries as well.
 
-Examples: 
+Here is how the query tab looks:
+
+![influx-query-tab](https://raw.githubusercontent.com/victronenergy/venus-docker-grafana/master/readme-resources/influx-queries-tab.png)
+
+
+Examples of raw queries: 
 ```
 SELECT mean("value") FROM "solarcharger/Dc/0/Current" WHERE ("portalId" = '985dadcb8af0' AND "instanceNumber" = '258') AND $timeFilter GROUP BY time($__interval) fill(null)
 ```
@@ -110,11 +115,7 @@ SELECT mean("value") FROM "solarcharger/Dc/0/Current" WHERE ("portalId" = '985da
 SELECT mean("value") FROM "solarcharger/Dc/0/Current" WHERE ("name" = 'Boat' AND "instanceNumber" = '258') AND $timeFilter GROUP BY time($__interval) fill(null)
 ```
 
-## 4. Influxdb Retention Policy
-
-The default retention policy is 30 days. To change this you can go to Configuration -> InfluxDB In the admin interface. The value is an influxdb [Duration](https://docs.influxdata.com/influxdb/v1.7/query_language/spec/#durations)
-
-## 5. How does this work?
+## 5. Internal workings
 
 Docker is a container technology, see Google.
 
