@@ -93,7 +93,10 @@ This section needs explaining. Pull requests welcome.
 
 The default retention policy is 30 days. To change this you can go to Configuration -> InfluxDB In the admin interface. The value is an influxdb [Duration](https://docs.influxdata.com/influxdb/v1.7/query_language/spec/#durations)
 
-## 4. Influxdb Measurement Storage
+## 4. Setting up Grafana dashboards
+
+https://youtu.be/B-sGH0etieM
+
 
 Measurements are stored in influxdb using a modified version of the MQTT topics. The portal id and instance numbers are removed from the name and are "tags" on the data. The device name, if available, is also added as a "tag"
 
