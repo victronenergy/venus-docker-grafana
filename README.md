@@ -22,7 +22,7 @@ Make sure to go online and learn more about it.
 
 An example of a dashboard:
 
-![hydro power docker example](https://raw.githubusercontent.com/victronenergy/venus-docker-grafana/master/readme-resources/hydro%20grafana.jpg)
+![hydro power docker example](readme-resources/hydro%20grafana.jpg)
 
 ## 1. Requirements
 
@@ -92,7 +92,7 @@ Clisk `Save` to start collecting data
 
 ### 2.2 Host in on Amazon AWS or another cloud provider.
 
-This section needs explaining. Pull requests welcome.
+See the [AWS instructions](AWS.md).
 
 ## 3. Influxdb Retention Policy
 
@@ -201,6 +201,7 @@ first letter (as the search is case sensitive and all sub-paths use a capital fi
 
 Note that for the search feature to work there must not be an 'instanceNumber' WHERE condition, if one exists it needs
 to be removed and re-added later.
+
 To better familiarise yourself with the Venus OS dbus path structure refer to the [dbus path list](https://github.com/victronenergy/venus/wiki/dbus) in GitHub or the [modbus TCP register list](https://www.victronenergy.com/support-and-downloads/whitepapers) in the whitepapers section of the Victron website.
 
 #### Queries - WHERE
