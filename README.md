@@ -24,6 +24,10 @@ An example of a dashboard:
 
 ![hydro power docker example](readme-resources/hydro%20grafana.jpg)
 
+Instruction video how to use and configure the dashboards, once installed:
+
+[![](http://img.youtube.com/vi/B-sGH0etieM/0.jpg)](http://www.youtube.com/watch?v=B-sGH0etieM "Getting Started with Victron & Grafana Dashboard - Part 2")
+
 ## 1. Requirements
 
 - A Victron Energy system including a [Victron GX Device](https://www.victronenergy.com/live/venus-os:start)
@@ -49,7 +53,9 @@ are making to the solution, see: https://github.com/victronenergy/venus-docker-g
 
 ### 2.1 Host it locally
 
-This video walks through below steps: https://www.youtube.com/watch?v=IkNuadRbANA
+This video walks through below steps, click to start:
+
+[![](http://img.youtube.com/vi/IkNuadRbANA/0.jpg)](http://www.youtube.com/watch?v=IkNuadRbANA "Getting Started with Victron & Grafana Dashboard - Part 1")
 
 1. Download and install [Docker desktop](https://www.docker.com/products/docker-desktop). Its available for
 Windows, macOS, Linux and more operating systems.
