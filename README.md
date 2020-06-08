@@ -58,11 +58,20 @@ This video walks through below steps, click to start:
 [![](http://img.youtube.com/vi/IkNuadRbANA/0.jpg)](http://www.youtube.com/watch?v=IkNuadRbANA "Getting Started with Victron & Grafana Dashboard - Part 1")
 
 1. Download and install [Docker desktop](https://www.docker.com/products/docker-desktop). Its available for
-Windows, macOS, Linux and more operating systems.
+Windows, macOS, Linux and more operating systems. Notes:
+    - Windows 10 Home could be problematic because
+Docker needs features currently only available in Windows 10 professional. There are work arounds, search on
+Google for docker windows 10 home to find more information. This is not specific to Victron Energy.
+    - Om Windows Prof., and probably other platforms too, Docker Desktop runs in the background and nothing
+    will appear on the screen, Click on Show hidden items, click on the Docker icon and then Dashboard.
+    - Wait until Docker is running - the icon in the bottom left says 'running'
 1. Enable the MQTT service on your GX Device in Settings -> Services.
 2. Download the docker compose [file](https://raw.githubusercontent.com/victronenergy/venus-docker-grafana/master/docker-compose.yaml) (right-click and use Save as)
-3. In the directory containing the downloaded file, execute `docker-compose up --detach`.
-4. Go to the admin interface @ http://localhost:8088
+3. In the directory containing the downloaded file, execute `docker-compose up --detach`. Notes:
+    - To do this on Windows, use the Power shell for this. For a detailed walkthrough, see above
+      video.
+    - The installation process takes a quite a few minutes. Check it completes without errors.
+4. Go to the admin interface @ http://localhost:8088, default username and password are admin and admin.
 4. Follow instructions for option A, B OR C below
 5. Accessing Grafana on http://localhost:3000 and enter `admin` for user name and `admin` for password.
 
