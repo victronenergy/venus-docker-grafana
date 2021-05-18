@@ -2,15 +2,18 @@ version: '3.4'
 services:
   server:
     image: "victronenergy/venus-docker-server:latest"
+    platform: linux/amd64
     ports:
      - "8088:8088"
     volumes:
      - "config-storage:/config"
   upnp:
     image: "victronenergy/venus-docker-upnp:latest"
+    platform: linux/amd64
     network_mode: host
   influxdb:
     image: "influxdb:1.7"
+    platform: linux/amd64
     ports:
      - "8086:8086"
     volumes:
@@ -19,13 +22,13 @@ services:
      - INFLUXDB_HTTP_LOG_ENABLED=false
   graphing:
     image: "victronenergy/venus-docker-grafana:latest"
+    platform: linux/amd64
     volumes:
      - "grafana-storage:/var/lib/grafana"
     ports:
      - "3000:3000"
-    
+
 volumes:
  influxdb-storage:
  grafana-storage:
  config-storage:
-
