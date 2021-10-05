@@ -1,5 +1,7 @@
 # venus-docker-grafana - Advanced Victron Dashboarding
 
+## 1. Introduction
+
 Venus-docker-grafana is a dashboarding solution for Victron Energy systems.
 Its a niche alternative to our main solution, the [VRM Portal](https://vrm.victronenergy.com).
 
@@ -28,7 +30,7 @@ Instruction video how to use and configure the dashboards, once installed:
 
 [![](http://img.youtube.com/vi/B-sGH0etieM/0.jpg)](http://www.youtube.com/watch?v=B-sGH0etieM "Getting Started with Victron & Grafana Dashboard - Part 2")
 
-## 1. Requirements
+## 2. Requirements
 
 - A Victron Energy system including a [Victron GX Device](https://www.victronenergy.com/live/venus-os:start)
 - A computer to host and run all this. It can be a Windows or Apple laptop or
@@ -43,15 +45,25 @@ visualise the data. from a at ~2 second interval and analyse it using
 [Grafana](https://grafana.com/). Grafana is a super powerful webbased data analysis tool.
 Which is quite easy to learn.
 
-This repository contains the docker compose configurations and is all that is needed to get up and running. The
-source code and setup for the docker images are located here: https://github.com/victronenergy/venus-docker-grafana-images 
+## 3. Source code & repos
 
-For the latest info on changes we
-are making to the solution, see: https://github.com/victronenergy/venus-docker-grafana-images/releases
+There are a few repos:
 
-## 2. How to install
+  - venus-docker-grafana (the repo having this readme): the docker compose configurations, which are files necessary to download, install and run
+the venus-docker-grafana images.
+  - venus-docker-grafana-images: the various docker files, used to build the docker images. In more detail:
+    - victronenergy/venus-docker-server: the server running the admin ui; built with nodejs.
+    - victronenergy/venus-docker-upnp:
+    - influxdb: the influxdb instance
+    - victronenergy/venus-docker-grafana: the grafana instance
 
-### 2.1 Host it locally
+## 4. Change log of the images
+
+https://github.com/victronenergy/venus-docker-grafana-images/releases
+
+## 5. How to install
+
+### 5.1 Host it locally
 
 This video walks through below steps, click to start:
 
@@ -105,21 +117,21 @@ All your devices in VRM will show in the list.
 
 Clisk `Save` to start collecting data
 
-### 2.2 Host in on Amazon AWS or another cloud provider.
+### 5.2 Host in on Amazon AWS or another cloud provider.
 
 See the [AWS instructions](AWS.md).
 
-## 3. Influxdb Retention Policy
+## 6. Influxdb Retention Policy
 
 The default retention policy is 30 days. To change this you can go to Configuration -> InfluxDB In the admin interface.
 The value is an influxdb [Duration](https://docs.influxdata.com/influxdb/v1.7/query_language/spec/#durations)
 
-## 4. Setting up a Grafana Dashboard
+## 7. Setting up a Grafana Dashboard
 
 For an introductory overview refer to the [Getting started with Victron and Grafana Part 2 - Setting up a dashboard](https://youtu.be/B-sGH0etieM) instructional video.
 
 
-### 4.1 Creating a new panel/visualisation
+### 7.1 Creating a new panel/visualisation
 To create a new query and dashboard panel/visualisation it’s possible to start with a new/blank query or to duplicate
 an existing query/panel and then modify it to suit.
 
@@ -146,7 +158,7 @@ Dashboard setup and configuration is completed within the ‘Queries’, ‘Visu
 described in the following sections.
 
 
-### 4.2 Queries
+### 7.2 Queries
 All available Venus OS parameters/measurements are stored in InfluxDB using modified MQTT topics – with the Portal ID and
 instance number removed from the MQTT path and available as an independent filter "tag". The installation name (if available)
 is another useful filter “tag” available.
@@ -284,7 +296,7 @@ This is an example of a completed Queries page where two different (but related)
 
 ![queries multiple](readme-resources/grafana-queries-multiple.png)
 
-### 4.3 Visualization
+### 7.3 Visualization
 To select or change the type of panel/visualization, enter the Visualization page and then click on the Visualization dropdown
 to reveal all the available options. 
 
@@ -297,12 +309,12 @@ graph (each on a different axis);
 
 ![visualization settings](readme-resources/grafana-visualization-settings.png)
 
-### 4.4 General
+### 7.4 General
 The title of the panel/visualisation is entered in the general page.
 
 ![general](readme-resources/grafana-general.png)
 
-## 5. Internal workings
+## 8. Internal workings
 
 Docker is a container technology, see Google.
 
