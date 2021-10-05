@@ -49,17 +49,22 @@ Which is quite easy to learn.
 
 There are a few repos:
 
-  - venus-docker-grafana (the repo having this readme): the docker compose configurations, which are files necessary to download, install and run
+  - [venus-docker-grafana](https://github.com/victronenergy/venus-docker-grafana) (the repo having this readme): the docker compose configurations, which are files necessary to download, install and run
 the venus-docker-grafana images.
-  - venus-docker-grafana-images: the various docker files, used to build the docker images. In more detail:
+  - [venus-docker-grafana-images](https://github.com/victronenergy/venus-docker-grafana-images): the various docker files, used to build the docker images. In more detail:
     - victronenergy/venus-docker-server: the server running the admin ui; built with nodejs.
     - victronenergy/venus-docker-upnp:
     - influxdb: the influxdb instance
     - victronenergy/venus-docker-grafana: the grafana instance
 
+
 ## 4. Change log of the images
 
 https://github.com/victronenergy/venus-docker-grafana-images/releases
+
+When built (by someone with the proper credentials), new binary images are uploaded here: https://hub.docker.com/u/victronenergy.
+
+Note that the venus-docker image is something else entirely.
 
 ## 5. How to install
 
