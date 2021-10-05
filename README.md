@@ -45,7 +45,7 @@ visualise the data. from a at ~2 second interval and analyse it using
 [Grafana](https://grafana.com/). Grafana is a super powerful webbased data analysis tool.
 Which is quite easy to learn.
 
-## 3. Source code & repos
+## 3. Source code & repos (only necessary for development)
 
 There are a few repos:
 
