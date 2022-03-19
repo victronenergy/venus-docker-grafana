@@ -88,6 +88,9 @@ Google for docker windows 10 home to find more information. This is not specific
     - To do this on Windows, use the Power shell for this. For a detailed walkthrough, see above
       video.
     - The installation process takes a quite a few minutes. Check it completes without errors.
+    - For Raspbian systems, docker-compose must be installed with the command `sudo pip3 install docker-compose`. Of course, this requires that pip3 be installed first, with ```sudo apt-get install libffi-dev libssl-dev
+sudo apt install python3-dev
+sudo apt-get install -y python3 python3-pip``` 
 4. Go to the admin interface @ http://localhost:8088, default username and password are admin and admin.
 4. Follow instructions for option A, B OR C below
 5. Accessing Grafana on http://localhost:3000 and enter `admin` for user name and `admin` for password.
